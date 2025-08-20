@@ -1,0 +1,13 @@
+<div class="container p-4">
+  <button class="btn btn-outline-dark mb-3" (click)="back()">Back</button>
+  <h3 class="display-4">User Details</h3>
+
+  <div *ngIf="!user">Loading details...</div>
+
+  <div *ngIf="user" class="mt-3">
+    <div *ngFor="let k of keys()" class="mb-2">
+      <strong class="text-capitalize">{{ k }}</strong>
+      <pre class="p-2 bg-light">{{ user[k] | json }}</pre>
+    </div>
+  </div>
+</div>
